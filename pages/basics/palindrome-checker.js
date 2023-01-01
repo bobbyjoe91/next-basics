@@ -1,9 +1,15 @@
+import React, { useState } from "react";
 import Head from "next/head";
-import React from "react";
 
 import styles from "../../styles/Home.module.css";
 
 export default function PalindromeChecker(props) {
+  const [words, setWords] = useState('');
+
+  function handleInput(event) {
+    setWords(event.target.value);
+  }
+
   return (
     <>
       <Head>
@@ -13,11 +19,19 @@ export default function PalindromeChecker(props) {
       <main className={styles['main-palindromeChecker']}>
         <h1>Palindrome Checker</h1>
 
-        <input className={styles['text-input']} type="text" />
+        <input
+          className={styles['text-input']}
+          type="text"
+          onChange={handleInput}
+        />
+
         <div style={{ height: '10px' }} />
         <button>Check</button>
         <div style={{ height: '10px' }} />
         <button>Clear</button>
+
+        <h2>Result</h2>
+        <p>{words}</p>
       </main>
     </>
   );
