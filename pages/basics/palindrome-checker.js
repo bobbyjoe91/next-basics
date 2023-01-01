@@ -10,6 +10,10 @@ export default function PalindromeChecker(props) {
     setWords(event.target.value);
   }
 
+  function clearInput() {
+    setWords('');
+  }
+
   return (
     <>
       <Head>
@@ -22,13 +26,14 @@ export default function PalindromeChecker(props) {
         <input
           className={styles['text-input']}
           type="text"
+          value={words}
           onChange={handleInput}
         />
 
         <div style={{ height: '10px' }} />
         <button>Check</button>
         <div style={{ height: '10px' }} />
-        <button>Clear</button>
+        <button onClick={clearInput}>Clear</button>
 
         <h2>Result</h2>
         <p>{words}</p>
