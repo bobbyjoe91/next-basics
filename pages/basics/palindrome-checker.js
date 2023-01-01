@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Head from "next/head";
 
+import { isPalindrome } from "../../utils";
+
 import styles from "../../styles/Home.module.css";
 
 export default function PalindromeChecker(props) {
