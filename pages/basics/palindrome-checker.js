@@ -10,8 +10,11 @@ export default function PalindromeChecker(props) {
         <title>Palindrome Checker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        
+      <main className={styles['main-palindromeChecker']}>
+        <h1>Palindrome Checker</h1>
+        <input type="text" />
+        <button>Check</button>
+        <button>Clear</button>
       </main>
     </>
   );
