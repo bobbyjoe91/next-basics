@@ -7,10 +7,11 @@ export function isPalindrome(words) {
   for (let leftIndex = 0; leftIndex < mid; leftIndex++) {
     rightIndex = wordLength - 1 - leftIndex;
 
-    if (words[leftIndex] === wordLength[rightIndex]) {
+    if (words[leftIndex] === words[rightIndex]) {
       isPalindrome = true;
     } else {
       isPalindrome = false;
+      break;
     }
   }
 
