@@ -4,6 +4,10 @@ export function isPalindrome(words) {
   let wordLength = words.length;
   let mid = Math.floor(wordLength/2);
 
+  if (wordLength === 1) {
+    return true;
+  }
+
   for (let leftIndex = 0; leftIndex < mid; leftIndex++) {
     rightIndex = wordLength - 1 - leftIndex;
 

@@ -11,6 +11,7 @@ export default function PalindromeChecker(props) {
 
   function handleInput(event) {
     setWords(event.target.value);
+    setWordsPalindrome(null);
   }
 
   function clearInput() {
