@@ -12,8 +12,11 @@ export default function PalindromeChecker(props) {
       </Head>
       <main className={styles['main-palindromeChecker']}>
         <h1>Palindrome Checker</h1>
-        <input type="text" />
+
+        <input className={styles['text-input']} type="text" />
+        <div style={{ height: '10px' }} />
         <button>Check</button>
+        <div style={{ height: '10px' }} />
         <button>Clear</button>
       </main>
     </>
