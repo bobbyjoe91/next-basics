@@ -7,6 +7,7 @@ import styles from "../../styles/Home.module.css";
 
 export default function PalindromeChecker(props) {
   const [words, setWords] = useState('');
+  const [isWordsPalindrome, setWordsPalindrome] = useState(null);
 
   function handleInput(event) {
     setWords(event.target.value);
@@ -14,6 +15,16 @@ export default function PalindromeChecker(props) {
 
   function clearInput() {
     setWords('');
+    setWordsPalindrome(null);
+  }
+
+  function handleCheckPalindrome() {
+    if (words !== '') {
+      let result = isPalindrome(words);
+      setWordsPalindrome(result);
+    } else {
+      setWordsPalindrome(null);
+    }
   }
 
   return (
@@ -33,12 +44,23 @@ export default function PalindromeChecker(props) {
         />
 
         <div style={{ height: '10px' }} />
-        <button>Check</button>
+        <button onClick={handleCheckPalindrome}>Check</button>
         <div style={{ height: '10px' }} />
         <button onClick={clearInput}>Clear</button>
 
-        <h2>Result</h2>
-        <p>{words}</p>
+        {
+          isWordsPalindrome === null
+            ? <></>
+            : isWordsPalindrome === true
+            ? <>
+                <h2>Result</h2>
+                <p>"{words}" adalah palindrome</p>
+              </>
+            : <>
+                <h2>Result</h2>
+                <p>"{words}" bukan palindrome</p>
+              </>
+        }
       </main>
     </>
   );
